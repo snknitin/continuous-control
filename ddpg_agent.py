@@ -18,6 +18,7 @@ LR_CRITIC = 3e-4        # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
 HIDDEN_LAYERS=(512,256)
 UPDATE_EVERY = 16
+DROPOUT =0.2
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class Agent():
@@ -42,8 +43,8 @@ class Agent():
         self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=LR_ACTOR)
 
         # Critic Network (w/ Target Network)
-        self.critic_local = Critic(state_size, action_size,hidden_sizes, random_seed).to(device)
-        self.critic_target = Critic(state_size, action_size,hidden_sizes, random_seed).to(device)
+        self.critic_local = Critic(state_size, action_size, random_seed,keep_prob=DROPOUT).to(device)
+        self.critic_target = Critic(state_size, action_size, random_seed,keep_prob=DROPOUT).to(device)
         self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=LR_CRITIC, weight_decay=WEIGHT_DECAY)
         
         self.hard_copy_weights(self.actor_target, self.actor_local)
