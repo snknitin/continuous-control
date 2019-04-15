@@ -33,7 +33,7 @@ class Actor(nn.Module):
     def reset_parameters(self):
         for layer in self.layers:
             layer.weight.data.uniform_(*hidden_init(layer))
-        self.fc2.weight.data.uniform_(-3e-3, 3e-3)
+        self.out.weight.data.uniform_(-3e-3, 3e-3)
 
     def forward(self, state):
         """Build an actor (policy) network that maps states -> actions."""

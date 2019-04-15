@@ -13,18 +13,18 @@ BUFFER_SIZE = int(1e6)  # replay buffer size
 BATCH_SIZE = 512        # minibatch size
 GAMMA = 0.99            # discount factor
 TAU = 1e-3              # for soft update of target parameters
-LR_ACTOR = 1e-4         # learning rate of the actor 
+LR_ACTOR = 2e-4         # learning rate of the actor 
 LR_CRITIC = 3e-4        # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
 HIDDEN_LAYERS=(512,256)
-UPDATE_EVERY = 16
+UPDATE_EVERY = 4
 DROPOUT =0.2
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class Agent():
     """Interacts with and learns from the environment."""
     
-    def __init__(self, state_size, action_size, random_seed, hidden_sizes=HIDDEN_LAYERS):
+    def __init__(self, state_size, action_size,random_seed,hidden_sizes=HIDDEN_LAYERS):
         """Initialize an Agent object.
         
         Params
