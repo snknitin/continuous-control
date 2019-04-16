@@ -18,7 +18,7 @@ In the DDPG paper, they introduced this algorithm as an "Actor-Critic" method. T
 The actor here is used to approximate an optimal policy deterministically μ(s;θμ),ie., always output the best believed action for any given state which is unlike the stochastic policy given by π(a|s;θπ) where we want to learn a probability distribution over the actions. In DDPG we want the believed best action every single time we query the actor network. That is a deterministic policy where the actor is basically learning argmax_a Q(s,a) and the critic learns to evaluate the optimal action value function using the actor's best believed action. So instead of V(s;θ) we learn Q(s,μ(s;θμ);θQ). Again, we use this actor which is an approximate maximizer to calculate a new target value for training the action value function, much like DQN.
 
 
-**Improvements**:  
+**Improvements**:
 
 2 other intersting aspects of DDPG are -
 * Use of a replay buffer
@@ -30,7 +30,7 @@ In DQN we have 2 copies of NN weights - local and target. Local is the one that 
 ## Hyper parameters and Other Changes
 
 
-I modified the architecture of the Actor and Critic Neural networks.
+I modified the architecture of the Actor and Critic Neural networks. I tried tuning several hyperparameters like the learning rates, batchsize and the weight decay
 
 
 * Activation function  - Leaky Relu for all layers except the last one.  Using torch.tanh for the final one
@@ -73,8 +73,15 @@ Tuning other hyperparameters might help converge even faster
 * **20 Agents**
 
 
+
+
+![alt text](https://github.com/snknitin/continuous-control/blob/master/curve-twenty_1.PNG)
+![alt text](https://github.com/snknitin/continuous-control/blob/master/curve-twenty_2.PNG)
+
 ## Ideas for Future Work
 
+* Try optimizing further using shared learning from the single agent case which trained relatively fast, and use those weights as the starting point for each of the 20 agents
+* I would like to try out Trust Region Policy Optimization (TRPO) and Truncated Natural Policy Gradient (TNPG) since literature suggests it should achieve better performance.
+* Even Proximal Policy Optimization (PPO), as it is known to give good performance with continuous control tasks.
 
-
-*
+From the note mentioned in the project page, i came across Distributed Distributional Deterministic Policy Gradients (D4PG) algorithm as another method for adapting DDPG for continuous control, which seems interesting.
