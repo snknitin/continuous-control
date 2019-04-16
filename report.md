@@ -51,7 +51,7 @@ Tuning other hyperparameters might help converge even faster
         Environment solved in 254 episodes!	Average Score: 30.05
 
 
-![alt text](https://github.com/snknitin/Navigation-RL/blob/master/curve-single.PNG)
+![alt text](https://github.com/snknitin/continuous-control/blob/master/curve-single.PNG)
 
 * **20 Agents**
 
