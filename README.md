@@ -72,3 +72,5 @@ Follow the instructions in
 * `Continuous_Control.ipynb` to get started with training single agent!
 * `Continuous_Control-20 Agents.ipynb` to get started with training multiple agents!
 
+Load the trained agent's actor and critic weights from the checkpoint_{actor,critic,actor_20,critic_20}.pth file to see the agent(s) in action.
+For the best model in the 20 agents case, the checkpoints file will have the prefix "best" in the file name
