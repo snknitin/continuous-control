@@ -26,15 +26,17 @@ I modified the architecture of the Actor and Critic Neural networks.
 
 Tuning other hyperparameters might help converge even faster
 
-* BUFFER_SIZE = int(1e6)  # replay buffer size
-* GAMMA = 0.99            # discount factor
-* TAU = 1e-3              # for soft update of target parameters
-* LR_ACTOR = 2e-4         # learning rate of the actor
-* LR_CRITIC = 3e-4        # learning rate of the critic
-* WEIGHT_DECAY = 0        # L2 weight decay
-* HIDDEN_LAYERS=(512,256) # Modified the architecture to include an additional hidden layers with 512 and 256 units
-* UPDATE_EVERY = 20       # 20 for 20 agents case and 4 for single
-* DROPOUT =0.2
+
+            * BUFFER_SIZE = int(1e6)  # replay buffer size
+            * GAMMA = 0.99            # discount factor
+            * TAU = 1e-3              # for soft update of target parameters
+            * LR_ACTOR = 2e-4         # learning rate of the actor
+            * LR_CRITIC = 3e-4        # learning rate of the critic
+            * WEIGHT_DECAY = 0        # L2 weight decay
+            * HIDDEN_LAYERS=(512,256) # Modified the architecture to include an additional hidden layers with 512 and 256 units
+            * UPDATE_EVERY = 20       # 20 for 20 agents case and 4 for single
+            * DROPOUT = 0.2
+            * num_update = 10
 
 
 

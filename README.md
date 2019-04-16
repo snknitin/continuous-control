@@ -38,6 +38,11 @@ The barrier for solving the second version of the environment is slightly differ
 
 The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30. 
 
+
+
+You can have a look at the results over [here](https://github.com/snknitin/continuous-control/blob/master/report.md)
+
+
 ### Getting Started
 
 1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
