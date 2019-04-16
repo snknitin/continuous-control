@@ -72,11 +72,11 @@ Tuning other hyperparameters might help converge even faster
 
 * **20 Agents**
 
+        Episode 96	Average Score: 30.02
+        Environment solved in 96 episodes!	Average Score: 30.02
 
 
-
-![alt text](https://github.com/snknitin/continuous-control/blob/master/curve-twenty_1.PNG)
-![alt text](https://github.com/snknitin/continuous-control/blob/master/curve-twenty_2.PNG)
+![alt text](https://github.com/snknitin/continuous-control/blob/master/curve-twenty.PNG)
 
 ## Ideas for Future Work
 
