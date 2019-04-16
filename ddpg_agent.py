@@ -17,7 +17,7 @@ LR_ACTOR = 2e-4         # learning rate of the actor
 LR_CRITIC = 3e-4        # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
 HIDDEN_LAYERS=(512,256)
-UPDATE_EVERY = 4
+UPDATE_EVERY = 20
 DROPOUT =0.2
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
